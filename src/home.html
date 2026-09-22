@@ -109,14 +109,20 @@
     {Id: "567890", Nombre: "Resaltador", Precio:"10", Categoria: "Libreria"} 
 ];
 
-
     function BuscarCategoria(Categ) {
-        const filtrar = Producto.filter(Categoria="Tecnologia");
-        console.log("Productos de la categoria: "+ filtrar);
+        const filtrar = Producto.filter(Categoriaa => Categoriaa.Categoria == "Tecnologia");
     } 
+    
+    function Busqueda(){
+       
+        var ListaProductos = Producto.filter(filtrar)
+    console.log("LIsta de productos", ListaProductos);
 
-
+    }
 
 </script>
+
+<button onclick="Busqueda()">Busqueda Productos </button>
+
 </body>
 </html>
