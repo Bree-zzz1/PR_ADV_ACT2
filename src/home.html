@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecciona una opción</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
 </head>
 <body>
 
@@ -109,16 +114,28 @@
     {Id: "567890", Nombre: "Resaltador", Precio:"10", Categoria: "Libreria"} 
 ];
 
-    function BuscarCategoria(Categ) {
-        const filtrar = Producto.filter(Categoriaa => Categoriaa.Categoria == "Tecnologia");
-    } 
-    
-    function Busqueda(){
-       
-        var ListaProductos = Producto.filter(filtrar)
-    console.log("LIsta de productos", ListaProductos);
+    const categoriaElegida = "Electronica";
 
-    }
+    const productoFiltrado = Producto.filter(
+   ({ categoria }) => categoria === categoriaElegida
+);
+
+    const nombresMayusculas = productoFiltrado.map(
+   ({ nombre }) => nombre.toUpperCase()
+);
+
+    const precioTotal = productos.reduce(
+   (total, { precio }) => total + precio,
+   0
+);  
+
+    console.log("Resultados: ");
+    console.log("\nProductos filtrados:");
+    console.log(productoFiltrado);
+    console.log("\nNombres de los productos en mayúsculas:");
+    console.log(nombresMayusculas);
+    console.log("\nPrecio total de todos los productos:");
+    console.log("$" + precioTotal.toLocaleString("es-CO"));
 
 </script>
 
